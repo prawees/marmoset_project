@@ -21,7 +21,7 @@ The path to the data that will use to validate the model ("val") is `/content/ma
 
 ### 2. Convert Data into YOLO-Compatible Form
 
-Convert the dataset annotations into YOLO format using deeplabcut2yolo. This uses the .json annotation file and .csv and the converted compatible format is saved in "save" path.
+Convert the dataset annotations into YOLO format using deeplabcut2yolo. This uses the .json annotation file and .csv and the converted compatible format is saved in `save` path.
 
 
 ### 3. Create YAML File
@@ -44,7 +44,7 @@ We used sam_b.pt.
 ### 7. Use SAM Model to Segment Data
 
 The bounding boxes (bboxes) obtained from YOLOv8 is then used in the SAM model for segmentation.
-The "for" loop in the script loops through all the images in the training dataset and detects marmosets with YOLOv8. The bboxes to generate masks with SAM, and saves the output images with segmentation to `output_path`.
+The "for" loop in the script loops through all the images in the testing dataset and detects marmosets with YOLOv8. The bboxes to generate masks with SAM, and saves the output images with segmentation to `output_path`.
 
 ### Requirements
 To run this project, you need the following:
