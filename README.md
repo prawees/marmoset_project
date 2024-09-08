@@ -27,7 +27,7 @@ Convert the dataset annotations into YOLO format (`x_center, y_center, width, he
 
 ### 3. Create YAML File
 
-Create a `output.yml` file that defines the dataset structure for YOLOv8 training. The file should include paths to the training and validation datasets and specify the number of classes and their names. 
+Create a `output.yaml` file that defines the dataset structure for YOLOv8 training. The file should include paths to the training and validation datasets and specify the number of classes and their names. 
 
 ### 4. Import and Train YOLO Model
 
