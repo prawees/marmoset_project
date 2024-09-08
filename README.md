@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project demonstrates the process of detecting marmosets in images using YOLOv8 for bounding box detection and Segment Anything Model (SAM) for segmentation. The project follows a structured pipeline to detect and segment objects effectively.
+This project demonstrates the process of detecting marmosets in images to detect and segment objects by using YOLOv8 for bounding box detection and Segment Anything Model (SAM) for segmentation.
 
 ### Authors:
 - 6402001: Gunn Kittichaidamrong
@@ -10,9 +10,7 @@ This project demonstrates the process of detecting marmosets in images using YOL
 - 6402009: Prawee Sinweeruthai
 - 6402016: Withinat Teewiriya
 
-## How to Use
-
-Follow the steps below to set up and run the marmoset detection and segmentation pipeline:
+## Steps 
 
 ### 1. Import Dataset
 
@@ -23,19 +21,20 @@ The path to the data that will use to validate the model ("val") is `/content/ma
 
 ### 2. Convert Data into YOLO-Compatible Form
 
-Convert the dataset annotations into YOLO format (`x_center, y_center, width, height`) in normalized coordinates). Ensure the images and labels match correctly for the YOLOv8 model to train on.
+Convert the dataset annotations into YOLO format using deeplabcut2yolo. This uses the .json annotation file and .csv and the converted compatible format is saved in "save" path.
+
 
 ### 3. Create YAML File
 
-Create a `output.yaml` file that defines the dataset structure for YOLOv8 training. The file should include paths to the training and validation datasets and specify the number of classes and their names. 
+Create a `output.yaml` file that defines the dataset structure for YOLOv8 training. The file includes paths to the training and validation datasets, and the number of classes and their names is specified (we use 2 classes : B, W)
 
 ### 4. Import and Train YOLO Model
 
-Use the YOLOv8 model from the Ultralytics library for training
+Use the YOLOv8 model from the Ultralytics library for training.
 
 ### 5. Import Test Dataset
 
-Prepare a test dataset to evaluate the YOLOv8 model's performance. Ensure the test images are correctly formatted and placed in the appropriate directory, such as datasets/marmoset-train/images/test
+Import a test dataset to evaluate the YOLOv8 model by using !wget and !unzip on the test DLC link.
 
 ### 6. Import SAM Model
 
@@ -44,8 +43,8 @@ We used sam_b.pt.
 
 ### 7. Use SAM Model to Segment Data
 
-Use bounding boxes obtained from YOLOv8 to prompt the SAM model for segmentation.
-The for loop in the script loops through all the images in the training dataset, detects marmosets with YOLOv8, uses the bounding boxes to generate masks with SAM, and saves the output images with segmentation.
+The bounding boxes (bboxes) obtained from YOLOv8 is then used in the SAM model for segmentation.
+The "for" loop in the script loops through all the images in the training dataset and detects marmosets with YOLOv8. The bboxes to generate masks with SAM, and saves the output images with segmentation to `output_path`.
 
 ### Requirements
 To run this project, you need the following:
