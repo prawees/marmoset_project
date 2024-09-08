@@ -47,7 +47,7 @@ The bounding boxes (bboxes) obtained from YOLOv8 is then used in the SAM model f
 The "for" loop in the script loops through all the images in the testing dataset and detects marmosets with YOLOv8. The bboxes to generate masks with SAM, and saves the output images with segmentation to `output_path`.
 
 ### Requirements
-To run this project, you need the following:
+To run this project the following resourches are needed:
 
 Python 3.8+
 PyTorch
