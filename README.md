@@ -17,12 +17,13 @@ Follow the steps below to set up and run the marmoset detection and segmentation
 ### 1. Import Dataset
 
 Prepare a dataset containing images of marmosetsใ
-The path to the data that will use to train the model ("train" is `/content/marmoset/marmoset-dlc-2021-05-07/labeled-data/reachingvideo1`
+The path to the data that will use to train the model ("train") is `/content/marmoset/marmoset-dlc-2021-05-07/labeled-data/reachingvideo1`.
+
 The path to the data that will use to validate the model ("val") is `/content/marmoset/marmoset-dlc-2021-05-07/labeled-data/refinement1`
 
 ### 2. Convert Data into YOLO-Compatible Form
 
-Convert the dataset annotations into YOLO format (`x_center, y_center, width, height` in normalized coordinates). Ensure the images and labels match correctly for the YOLOv8 model to train on.
+Convert the dataset annotations into YOLO format (`x_center, y_center, width, height`) in normalized coordinates). Ensure the images and labels match correctly for the YOLOv8 model to train on.
 
 ### 3. Create YAML File
 
